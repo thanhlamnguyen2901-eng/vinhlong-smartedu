@@ -5,34 +5,61 @@ export async function onRequestPost(context) {
     const userQuestion = body.question;
     const systemInst = body.systemInstruction;
 
-    // Chuỗi token AQ của thầy
-    const OAUTH_TOKEN = "AQ.Ab8RN6I7iXrCMAYMUw_t89WTk16zyZb06AsZnAK3YPjatcNtdg";
+    // 🔑 DÁN GROQ API KEY (BẮT ĐẦU BẰNG gsk_...) CỦA THẦY VÀO ĐÂY:
+    const GROQ_API_KEY = "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";
 
-    // Gọi lên máy chủ Google Gemini từ phía Server-side (vượt lỗi CORS)
-    const geminiResponse = await fetch("https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent", {
+    // Gọi đến máy chủ Groq AI (Mô hình Llama-3.3-70b siêu nhanh và thông minh)
+    const groqResponse = await fetch("https://api.groq.com/openai/v1/chat/completions", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "Authorization": `Bearer ${OAUTH_TOKEN.trim()}`
+        "Authorization": `Bearer ${GROQ_API_KEY.trim()}`
       },
       body: JSON.stringify({
-        contents: [{ parts: [{ text: userQuestion }] }],
-        systemInstruction: { parts: [{ text: systemInst }] }
+        model: "llama-3.3-70b-versatile",
+        messages: [
+          { role: "system", content: systemInst },
+          { role: "user", content: userQuestion }
+        ],
+        temperature: 0.7,
+        max_tokens: 1024
       })
     });
 
-    const data = await geminiResponse.json();
+    if (!groqResponse.ok) {
+      const errData = await groqResponse.json();
+      return new Response(JSON.stringify({ error: errData }), {
+        status: groqResponse.status,
+        headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin": "*" }
+      });
+    }
 
-    return new Response(JSON.stringify(data), {
+    const data = await groqResponse.json();
+    
+    // Chuẩn hóa định dạng trả về tương thích với giao diện tro-ly-ai.html
+    const aiText = data.choices?.[0]?.message?.content || "Không nhận được phản hồi từ máy chủ AI.";
+
+    const formattedResponse = {
+      candidates: [
+        {
+          content: {
+            parts: [{ text: aiText }]
+          }
+        }
+      ]
+    };
+
+    return new Response(JSON.stringify(formattedResponse), {
       headers: {
         "Content-Type": "application/json",
         "Access-Control-Allow-Origin": "*"
       }
     });
+
   } catch (err) {
     return new Response(JSON.stringify({ error: err.message }), {
       status: 500,
-      headers: { "Content-Type": "application/json" }
+      headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin": "*" }
     });
   }
 }
