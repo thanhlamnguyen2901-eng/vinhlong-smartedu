@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trợ Lý Đa Lĩnh Vực SmartEdu - Vĩnh Long SmartEdu</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts (Inter) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Marked.js hỗ trợ định dạng Markdown -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(rgba(15, 23, 42, 0.88), rgba(6, 78, 59, 0.88)), 
+                        url('background-hoidap.jpg') no-repeat center center fixed;
+            background-size: cover;
+            min-height: 100vh;
+        }
+        .glass-card {
+            background: rgba(15, 23, 42, 0.78);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+        .glass-input {
+            background: rgba(15, 23, 42, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #ffffff;
+        }
+        .glass-input:focus {
+            border-color: #10b981;
+            outline: none;
+        }
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: rgba(15, 23, 42, 0.3);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(16, 185, 129, 0.4);
+            border-radius: 4px;
+        }
+        .ai-markdown p { margin-bottom: 0.5rem; }
+        .ai-markdown ul { list-style-type: disc; margin-left: 1.25rem; margin-bottom: 0.5rem; }
+        .ai-markdown strong { color: #34d399; font-weight: 600; }
+    </style>
+</head>
+<body class="text-slate-100 flex flex-col min-h-screen">
+
+    <!-- NAVBAR HEADER -->
+    <header class="sticky top-0 z-50 glass-card border-b border-slate-700/50 px-4 py-3">
+        <div class="max-w-6xl mx-auto flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-500 to-teal-400 flex items-center justify-center text-slate-900 font-bold text-xl shadow-lg shadow-emerald-500/20">
+                    🌱
+                </div>
+                <div>
+                    <h1 class="font-bold text-lg text-emerald-400 leading-tight">Vĩnh Long SmartEdu</h1>
+                    <p class="text-xs text-slate-400">Trường THCS Đại Điền</p>
+                </div>
+            </a>
+            <a href="index.html" class="text-sm bg-slate-800/80 hover:bg-slate-700 text-slate-300 px-3 py-1.5 rounded-lg border border-slate-600 transition flex items-center gap-2">
+                <i class="fa-solid fa-house"></i> Trang chủ
+            </a>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="flex-grow max-w-4xl w-full mx-auto p-4 md:p-6 flex flex-col space-y-4">
+
+        <!-- TIÊU ĐỀ TRANG -->
+        <div class="text-center space-y-1">
+            <span class="px-3 py-1 bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 rounded-full text-xs font-semibold uppercase tracking-wider">
+                <i class="fa-solid fa-wand-magic-sparkles mr-1"></i> Google Gemini 2.5 Flash Online AI - Đa Lĩnh Vực
+            </span>
+            <h2 class="text-2xl md:text-3xl font-bold text-white">Trợ Lý Thông Minh SmartEdu</h2>
+            <p class="text-xs md:text-sm text-slate-300 max-w-lg mx-auto">
+                Hỏi đáp trực tuyến: Phân loại rác môi trường, Di sản văn hóa Vĩnh Long - Bến Tre & Kiến thức STEM/Tin học.
+            </p>
+        </div>
+
+        <!-- THANH ĐIỀU HƯỚNG NHANH -->
+        <div class="glass-card rounded-2xl p-3 border border-slate-700 flex flex-wrap items-center justify-center gap-2 shadow-xl shrink-0">
+            <a href="quet-rac.html" class="px-3.5 py-2 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-200 font-medium text-xs flex items-center gap-2 border border-slate-700 transition">
+                <i class="fa-solid fa-camera text-teal-400"></i> Quét Rác AI
+            </a>
+            <a href="tro-ly-ai.html" class="px-3.5 py-2 rounded-xl bg-emerald-500 text-slate-950 font-bold text-xs flex items-center gap-2 shadow-md">
+                <i class="fa-solid fa-comments"></i> Trợ Lý AI
+            </a>
+            <a href="bao-cao.html" class="px-3.5 py-2 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-200 font-medium text-xs flex items-center gap-2 border border-slate-700 transition">
+                <i class="fa-solid fa-chart-pie text-teal-400"></i> Báo Cáo Thi Đua
+            </a>
+            <a href="stem-ar.html" class="px-3.5 py-2 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-200 font-medium text-xs flex items-center gap-2 border border-slate-700 transition">
+                <i class="fa-solid fa-cube text-teal-400"></i> STEM & AR
+            </a>
+            <a href="di-san.html" class="px-3.5 py-2 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-200 font-medium text-xs flex items-center gap-2 border border-slate-700 transition">
+                <i class="fa-solid fa-landmark text-teal-400"></i> Di Sản Số
+            </a>
+        </div>
+
+        <!-- KHUNG CHAT CONTAINER CHÍNH -->
+        <div class="glass-card rounded-2xl border border-slate-700 flex flex-col flex-grow overflow-hidden shadow-2xl h-[540px]">
+            
+            <!-- HEADER CHAT & BỘ LỌC CHUYÊN GIA -->
+            <div class="bg-slate-900/80 px-4 py-3 border-b border-slate-700/60 flex flex-wrap items-center justify-between gap-3">
+                <div class="flex items-center gap-3">
+                    <div id="ai-avatar-icon" class="w-8 h-8 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-emerald-400 text-sm">
+                        🎓
+                    </div>
+                    <div>
+                        <div class="font-bold text-sm text-emerald-300" id="ai-persona-title">Trợ lý Đa lĩnh vực SmartEdu</div>
+                        <div class="text-[10px] text-emerald-400 flex items-center gap-1.5">
+                            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Trực tuyến qua Proxy
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-1 bg-slate-950/60 p-1 rounded-xl border border-slate-700 flex-wrap">
+                    <button type="button" onclick="setPersona('all')" id="btn-all" class="persona-btn px-2.5 py-1 rounded-lg text-xs font-semibold bg-emerald-500 text-slate-950 transition">
+                        🌟 Tổng hợp
+                    </button>
+                    <button type="button" onclick="setPersona('environment')" id="btn-env" class="persona-btn px-2.5 py-1 rounded-lg text-xs font-semibold text-slate-300 hover:text-white transition">
+                        ♻️ Môi trường
+                    </button>
+                    <button type="button" onclick="setPersona('heritage')" id="btn-her" class="persona-btn px-2.5 py-1 rounded-lg text-xs font-semibold text-slate-300 hover:text-white transition">
+                        🏛️ Di sản Vĩnh Long
+                    </button>
+                    <button type="button" onclick="setPersona('stem')" id="btn-ste" class="persona-btn px-2.5 py-1 rounded-lg text-xs font-semibold text-slate-300 hover:text-white transition">
+                        🔬 STEM & Tin
+                    </button>
+                </div>
+            </div>
+
+            <!-- VÙNG HIỂN THỊ TIN NHẮN -->
+            <div id="chat-messages" class="flex-grow p-4 overflow-y-auto space-y-4 text-sm">
+                <div class="flex items-start gap-3">
+                    <div class="w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 font-bold text-xs">
+                        AI
+                    </div>
+                    <div class="max-w-[85%] glass-card p-3.5 rounded-2xl rounded-tl-sm border border-slate-700 text-slate-200 leading-relaxed shadow-md ai-markdown">
+                        Xin chào thầy! Hệ thống đã kết nối trực tiếp với Gemini qua Cloudflare Proxy. Hãy đặt câu hỏi bất kỳ nhé! 🌿
+                    </div>
+                </div>
+            </div>
+
+            <!-- CÁC THẺ GỢI Ý NHANH -->
+            <div class="px-4 py-2 bg-slate-900/40 border-t border-slate-800 flex flex-wrap gap-2" id="quick-chips-container">
+                <button type="button" onclick="sendQuickPrompt('Mô hình Song luồng tái chế rác hoạt động thế nào?')" class="text-[11px] bg-slate-800 hover:bg-slate-700 text-emerald-300 px-3 py-1 rounded-full border border-slate-700 transition">
+                    ♻️ Mô hình Song luồng tái chế rác?
+                </button>
+                <button type="button" onclick="sendQuickPrompt('Giới thiệu về truyền thống lịch sử và văn hóa xã Đại Điền?')" class="text-[11px] bg-slate-800 hover:bg-slate-700 text-teal-300 px-3 py-1 rounded-full border border-slate-700 transition">
+                    🏛️ Lịch sử và di sản xã Đại Điền?
+                </button>
+                <button type="button" onclick="sendQuickPrompt('Làng gốm đỏ Mang Thít ở Vĩnh Long có gì đặc biệt?')" class="text-[11px] bg-slate-800 hover:bg-slate-700 text-amber-300 px-3 py-1 rounded-full border border-slate-700 transition">
+                    🏺 Khám phá Làng gốm đỏ Mang Thít?
+                </button>
+                <button type="button" onclick="sendQuickPrompt('Cách viết chương trình Python đọc file .INP và ghi file .OUT bồi dưỡng HSG Tin học?')" class="text-[11px] bg-slate-800 hover:bg-slate-700 text-sky-300 px-3 py-1 rounded-full border border-slate-700 transition">
+                    💻 Lập trình Python xử lý file HSG Tin học?
+                </button>
+            </div>
+
+            <!-- KHUNG NHẬP NỘI DUNG -->
+            <div class="p-3 bg-slate-900/90 border-t border-slate-700/60 flex items-center gap-2">
+                <input type="text" id="user-input" onkeypress="handleKeyPress(event)" 
+                       placeholder="Nhập câu hỏi để gửi đến Gemini AI qua Proxy..." 
+                       class="flex-grow glass-input px-4 py-2.5 rounded-xl text-sm">
+                <button type="button" id="send-btn" onclick="sendMessage()" 
+                        class="px-5 py-2.5 bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-bold rounded-xl transition shadow-md flex items-center gap-2 shrink-0">
+                    <i class="fa-solid fa-paper-plane"></i> Gửi
+                </button>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="mt-auto border-t border-slate-800 py-4 text-center text-xs text-slate-500">
+        <p>© 2026 Dự án KHKT - Hệ sinh thái Giáo dục Số Vĩnh Long SmartEdu</p>
+        <p class="mt-1">Trường THCS Đại Điền, Tỉnh Vĩnh Long</p>
+    </footer>
+
+    <!-- JAVASCRIPT GỌI MÁY CHỦ BÊN BẰNG HÀM PROXY SERVERLESS -->
+    <script>
+        let currentPersona = 'all';
+
+        const personas = {
+            all: {
+                title: "Trợ lý Đa lĩnh vực SmartEdu",
+                icon: "🎓",
+                instruction: "Bạn là Trợ lý AI đa năng thuộc dự án KHKT của trường THCS Đại Điền (Bến Tre - Vĩnh Long). Am hiểu về môi trường tái chế, di sản Vĩnh Long và lập trình Python. Trả lời thân thiện, chính xác, dùng emoji.",
+                chips: [
+                    "♻️ Mô hình Song luồng tái chế rác?",
+                    "🏛️ Lịch sử và di sản xã Đại Điền?",
+                    "🏺 Khám phá Làng gốm đỏ Mang Thít?",
+                    "💻 Lập trình Python xử lý file HSG Tin học?"
+                ]
+            },
+            environment: {
+                title: "Chuyên gia Môi trường & Tái chế",
+                icon: "🌱",
+                instruction: "Bạn là Chuyên gia Môi trường giải đáp về phân loại rác và ủ phân hữu cơ.",
+                chips: ["🌱 Cách ủ phân hữu cơ trồng hoa vạn thọ?", "♻️ Phân loại rác nhựa tại nguồn thế nào?"]
+            },
+            heritage: {
+                title: "Hướng dẫn viên Di sản Vĩnh Long",
+                icon: "🏛️",
+                instruction: "Bạn là Hướng dẫn viên Văn hóa - Lịch sử địa phương Vĩnh Long - Bến Tre và xã Đại Điền.",
+                chips: ["🏛️ Lịch sử truyền thống xã Đại Điền?", "🏺 Khám phá Làng gốm đỏ Mang Thít?"]
+            },
+            stem: {
+                title: "Cố vấn Khoa học & Tin học STEM",
+                icon: "🔬",
+                instruction: "Bạn là Cố vấn Khoa học STEM và Tin học THCS, chuyên gia lập trình Python.",
+                chips: ["💻 Lập trình Python xử lý tệp .INP/.OUT?"]
+            }
+        };
+
+        window.setPersona = function(mode) {
+            currentPersona = mode;
+            document.querySelectorAll('.persona-btn').forEach(btn => {
+                btn.className = "persona-btn px-2.5 py-1 rounded-lg text-xs font-semibold text-slate-300 hover:text-white transition";
+            });
+
+            const btnMap = { 'all': 'btn-all', 'environment': 'btn-env', 'heritage': 'btn-her', 'stem': 'btn-ste' };
+            const activeBtn = document.getElementById(btnMap[mode]);
+            if (activeBtn) {
+                activeBtn.className = "persona-btn px-2.5 py-1 rounded-lg text-xs font-semibold bg-emerald-500 text-slate-950 transition shadow-sm";
+            }
+
+            const p = personas[mode];
+            document.getElementById('ai-persona-title').innerText = p.title;
+            document.getElementById('ai-avatar-icon').innerText = p.icon;
+
+            const chipsContainer = document.getElementById('quick-chips-container');
+            chipsContainer.innerHTML = '';
+            p.chips.forEach(chipText => {
+                const btn = document.createElement('button');
+                btn.type = 'button';
+                btn.onclick = () => window.sendQuickPrompt(chipText);
+                btn.className = "text-[11px] bg-slate-800 hover:bg-slate-700 text-emerald-300 px-3 py-1 rounded-full border border-slate-700 transition";
+                btn.innerText = chipText;
+                chipsContainer.appendChild(btn);
+            });
+
+            appendChatMessage("ai", `Đã chuyển sang chế độ <strong>${p.title}</strong>! ${p.icon}`);
+        }
+
+        // HÀM GỌI ĐẾN PROXY /functions/api-gemini
+        async function callProxyGemini(userQuestion) {
+            const currentInst = personas[currentPersona].instruction;
+
+            try {
+                const response = await fetch('/functions/api-gemini', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        question: userQuestion,
+                        systemInstruction: currentInst
+                    })
+                });
+
+                if (!response.ok) {
+                    throw new Error(`Mã lỗi HTTP Proxy: ${response.status}`);
+                }
+
+                const data = await response.json();
+                const aiText = data.candidates?.[0]?.content?.parts?.[0]?.text;
+                return aiText || "Máy chủ AI trả về phản hồi trống.";
+            } catch (error) {
+                console.error("Lỗi gọi Proxy:", error);
+                return "⚠️ **Không thể kết nối với máy chủ AI qua Proxy.** Thầy vui lòng kiểm tra lại trạng thái mạng!";
+            }
+        }
+
+        window.sendMessage = async function() {
+            const inputEl = document.getElementById('user-input');
+            const question = inputEl.value.trim();
+            if (!question) return;
+
+            appendChatMessage("student", question);
+            inputEl.value = "";
+
+            const loadingId = appendChatMessage("ai", "🌐 Đang gửi yêu cầu qua Proxy Serverless đến Gemini...", true);
+
+            const answer = await callProxyGemini(question);
+
+            typeWriterEffect(loadingId, answer);
+        }
+
+        window.sendQuickPrompt = function(promptText) {
+            document.getElementById('user-input').value = promptText;
+            window.sendMessage();
+        }
+
+        window.handleKeyPress = function(e) {
+            if (e.key === 'Enter') {
+                window.sendMessage();
+            }
+        }
+
+        function appendChatMessage(sender, text, isLoading = false) {
+            const container = document.getElementById('chat-messages');
+            const msgId = 'msg-' + Date.now();
+            const div = document.createElement('div');
+            div.id = msgId;
+
+            if (sender === 'student') {
+                div.className = "flex items-start justify-end gap-3";
+                div.innerHTML = `
+                    <div class="max-w-[85%] bg-emerald-600 text-white p-3.5 rounded-2xl rounded-tr-sm border border-emerald-500/40 leading-relaxed shadow-md">
+                        ${text}
+                    </div>
+                    <div class="w-8 h-8 rounded-full bg-teal-500/30 text-teal-300 flex items-center justify-center shrink-0 font-bold text-xs">
+                        Bạn
+                    </div>
+                `;
+            } else {
+                const formattedHtml = isLoading ? text : marked.parse(text);
+                div.className = "flex items-start gap-3 group";
+                div.innerHTML = `
+                    <div class="w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 font-bold text-xs">
+                        VinhLong SmartEdu
+                    </div>
+                    <div class="relative max-w-[85%] glass-card p-3.5 rounded-2xl rounded-tl-sm border border-slate-700 text-slate-200 leading-relaxed shadow-md ai-markdown">
+                        <div class="content-area ${isLoading ? 'animate-pulse text-emerald-300' : ''}">${formattedHtml}</div>
+                        ${!isLoading ? `
+                            <button onclick="copyMessage(this)" class="absolute -bottom-3 right-2 bg-slate-800 hover:bg-slate-700 text-[10px] text-slate-300 px-2 py-0.5 rounded-md border border-slate-600 opacity-0 group-hover:opacity-100 transition shadow">
+                                <i class="fa-solid fa-copy mr-1"></i> Sao chép
+                            </button>
+                        ` : ''}
+                    </div>
+                `;
+            }
+
+            container.appendChild(div);
+            container.scrollTop = container.scrollHeight;
+            return msgId;
+        }
+
+        function typeWriterEffect(msgId, fullText) {
+            const msgEl = document.getElementById(msgId);
+            if (!msgEl) return;
+            const contentDiv = msgEl.querySelector('.content-area');
+            contentDiv.classList.remove('animate-pulse', 'text-emerald-300');
+
+            let i = 0;
+            contentDiv.innerHTML = "";
+            const speed = 10;
+
+            function typing() {
+                if (i < fullText.length) {
+                    contentDiv.innerHTML = marked.parse(fullText.substring(0, i + 2));
+                    i += 3;
+                    const container = document.getElementById('chat-messages');
+                    container.scrollTop = container.scrollHeight;
+                    setTimeout(typing, speed);
+                } else {
+                    contentDiv.innerHTML = marked.parse(fullText);
+                    const cardDiv = msgEl.querySelector('.glass-card');
+                    if (!cardDiv.querySelector('button')) {
+                        const btn = document.createElement('button');
+                        btn.onclick = function() { copyMessage(this); };
+                        btn.className = "absolute -bottom-3 right-2 bg-slate-800 hover:bg-slate-700 text-[10px] text-slate-300 px-2 py-0.5 rounded-md border border-slate-600 opacity-0 group-hover:opacity-100 transition shadow";
+                        btn.innerHTML = `<i class="fa-solid fa-copy mr-1"></i> Sao chép`;
+                        cardDiv.appendChild(btn);
+                    }
+                }
+            }
+            typing();
+        }
+
+        window.copyMessage = function(btn) {
+            const content = btn.parentElement.querySelector('.content-area').innerText;
+            navigator.clipboard.writeText(content).then(() => {
+                const orig = btn.innerHTML;
+                btn.innerHTML = `<i class="fa-solid fa-check text-emerald-400 mr-1"></i> Đã chép`;
+                setTimeout(() => btn.innerHTML = orig, 1500);
+            });
+        }
+    </script>
+</body>
+</html>
